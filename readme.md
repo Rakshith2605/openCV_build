@@ -1,9 +1,9 @@
-#Build Instructions
+# Build Instructions
 `chmod +x main.sh`
 `./main.sh`
 
 
-#To Use a container
+# To Use a container
 ## Start container with current directory
 `docker run -it -v $(pwd):/app opencv-app bash`
 
