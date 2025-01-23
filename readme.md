@@ -4,85 +4,85 @@
 ## Start with input/output directories
 `docker run -it -v $(pwd):/app -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output opencv-app bash`
 
-# Run in detached mode
+## Run in detached mode
 docker run -d opencv-app
 
-# Start with working directory
+## Start with working directory
 docker run -it -w /app opencv-app bash
 
-# Run Python script directly
+## Run Python script directly
 docker run -it -v $(pwd):/app opencv-app python /app/script.py
 
-# Run with all mounts and Python script
+## Run with all mounts and Python script
 docker run -it -v $(pwd):/app -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output opencv-app python /app/script.py
 
-# Access container shell
+## Access container shell
 docker exec -it container_name bash
 
-# Run specific Python command
+## Run specific Python command
 docker exec container_name python script.py
 
-# Check OpenCV version
+## Check OpenCV version
 docker run --rm opencv-app python -c "import cv2; print(cv2.__version__)"
 
-# Check OpenCV build information
+## Check OpenCV build information
 docker run --rm opencv-app python -c "import cv2; print(cv2.getBuildInformation())"
 
-# Copy files from container to host
+## Copy files from container to host
 docker cp container_name:/app/file.txt ./local/path/
 
-# Copy files from host to container
+## Copy files from host to container
 docker cp ./local/file.txt container_name:/app/
 
-# List running containers
+## List running containers
 docker ps
 
-# List all containers (including stopped)
+## List all containers (including stopped)
 docker ps -a
 
-# List container IDs only
+## List container IDs only
 docker ps -q
 
-# Stop container gracefully
+## Stop container gracefully
 docker stop container_name
 
-# Stop container immediately
+## Stop container immediately
 docker kill container_name
 
-# Stop all containers
+## Stop all containers
 docker stop $(docker ps -a -q)
 
-# Remove container
+## Remove container
 docker rm container_name
 
-# Remove all stopped containers
+## Remove all stopped containers
 docker container prune
 
-# Remove all containers (forced)
+## Remove all containers (forced)
 docker rm -f $(docker ps -a -q)
 
-# Clean up entire system
+## Clean up entire system
 docker system prune -a
 
-# Pause container
+## Pause container
 docker pause container_name
 
-# Unpause container
+## Unpause container
 docker unpause container_name
 
-# Restart container
+## Restart container
 docker restart container_name
 
-# Restart all running containers
+## Restart all running containers
 docker restart $(docker ps -q)
 
-# Fix permission issues
+## Fix permission issues
 sudo chown -R $USER:$USER input output
 
-# Mount multiple directories
+## Mount multiple directories
 docker run -it -v $(pwd):/app -v /path/to/data:/data opencv-app bash
 
-# Development environment with all options
+## Development environment with all options
 docker run -it \
     -v $(pwd):/app \
     -v $(pwd)/input:/app/input \
