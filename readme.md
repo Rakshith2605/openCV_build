@@ -1,3 +1,7 @@
+# OpenCV Docker Development Environment
+A streamlined Docker-based solution for OpenCV development that eliminates common build and dependency issues. This repository provides a pre-configured environment with OpenCV and Python, making it easy to start working with computer vision projects without worrying about system-level configurations. Perfect for developers who want to avoid the hassle of OpenCV installation and focus on their computer vision applications.
+The setup includes ready-to-use Docker commands, build scripts, and development environment configurations that work consistently across different platforms.
+
 # Build Instructions
 `chmod +x main.sh`
 
