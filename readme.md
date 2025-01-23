@@ -1,8 +1,8 @@
-# Start container with current directory
+## Start container with current directory
 `docker run -it -v $(pwd):/app opencv-app bash`
 
-# Start with input/output directories
-docker run -it -v $(pwd):/app -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output opencv-app bash
+## Start with input/output directories
+`docker run -it -v $(pwd):/app -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output opencv-app bash`
 
 # Run in detached mode
 docker run -d opencv-app
